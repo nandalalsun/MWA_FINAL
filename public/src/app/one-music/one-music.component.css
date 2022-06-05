@@ -1,0 +1,25 @@
+ul{
+    font-size: 24px;
+    list-style-type: none;
+}
+button{
+    width: 40%;
+    height: 40px;
+    background-color: crimson;
+    font-style: bold;
+    color: aliceblue;
+}
+
+#delete_artist{
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 128, 128);
+    font-size: small;
+}
+
+#edit{
+    color:black;
+    background-color: blanchedalmond;
+    width: 30%;
+    height: 40px;
+}

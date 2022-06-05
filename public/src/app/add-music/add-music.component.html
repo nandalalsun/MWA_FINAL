@@ -1,0 +1,54 @@
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="registration(registrationForm)"
+>
+  <div class="form-group">
+    <label>Music Name</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="music_name"
+      placeholder="Music Name"
+    />
+  </div>
+  <div class="form-group">
+    <label>Music Type</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Music Type"
+      formControlName="music_type"
+    />
+  </div>
+  <div class="form-group">
+    <label>Music Rating</label>
+    <select class="form-control" formControlName="music_rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" formControlName="description" />
+  </div>
+  <div class="form-group">
+    <label>Artist Name</label>
+    <input type="text" class="form-control" formControlName="artist_name" />
+  </div>
+  <div class="form-group">
+    <label>Artist Age</label>
+    <input type="text" class="form-control" formControlName="age" />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div *ngIf="registrationResponse.success" id="success_message">
+  <span id="success">Music Added Successfully</span> <br />
+  Music Name: {{ registrationResponse.music_name }} <br />
+  Description: {{ registrationResponse.description }} <br />
+  Music Type: {{ registrationResponse.music_type }} <br />
+  Rating: {{ registrationResponse.music_rating }} <br />
+</div>

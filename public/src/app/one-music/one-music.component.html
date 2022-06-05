@@ -1,0 +1,30 @@
+<h1>Music Information:</h1>
+<ul class="list-group">
+  <li class="list-group-item">Music Title: {{ musics.music_name }}</li>
+  <li class="list-group-item">Description: {{ musics.description }}</li>
+  <li class="list-group-item">Music rating: {{ musics.music_rating }}</li>
+  <li class="list-group-item">Music type: {{ musics.music_type }}</li>
+</ul>
+<div>
+  <h2>Artist List</h2>
+  <ul *ngFor="let artist of musics.artist">
+    <br />
+    <li>
+      <span>
+        Artist Name: {{ artist.artist_name }}
+
+        Artist bio:
+        {{ artist.bio }}
+
+        Artist Age:
+
+        {{ artist.age }}
+      </span>
+      <button (click)="deleteArtist(artist._id)" id="delete_artist">
+        Delete Artist
+      </button>
+    </li>
+  </ul>
+</div>
+<button (click)="deleteMusic(musics._id)">Delete</button>
+<button (click)="editMusicForm()" id="edit">Edit</button>

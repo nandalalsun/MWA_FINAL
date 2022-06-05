@@ -1,0 +1,23 @@
+/* label{
+    font-size: 40px;
+
+}
+button{
+    width: 40%;
+    height: 40px;
+}
+input{
+    width: 40%;
+    height: 40px;
+    margin-left: 15px;
+} */
+#success_message{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#success{
+    font-weight: 900;
+    font-size: 25px;
+    color: green;
+}

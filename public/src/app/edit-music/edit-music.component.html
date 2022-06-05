@@ -1,0 +1,96 @@
+<div>
+  <form #editForm="ngForm" (ngSubmit)="musicEdit(editForm)">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Music Name</label>
+      <div class="col-sm-10">
+        <input
+          class="form-control col-sm-10"
+          name="music_name"
+          [(ngModel)]="musics.music_name"
+          ngModel
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Music Rating</label>
+      <div class="col-sm-10">
+        <input
+          class="form-control col-sm-10"
+          name="music_rating"
+          [(ngModel)]="musics.music_rating"
+          ngModel
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Music Description:</label>
+      <div class="col-sm-10">
+        <input
+          class="form-control col-sm-10"
+          name="description"
+          [(ngModel)]="musics.description"
+          ngModel
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Music Type:</label>
+      <div class="col-sm-10">
+        <input
+          class="form-control col-sm-10"
+          name="music_type"
+          [(ngModel)]="musics.music_type"
+          ngModel
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">
+      Submit The Change
+    </button>
+  </form>
+
+  <button (click)="addArtistForm()" *ngIf="!addArtist">Add Artist</button>
+</div>
+
+<br />
+
+<div>
+  <form #addArtist="ngForm" (ngSubmit)="addArtistSubmit(addArtist)" ngNativeValidate>
+    <div *ngIf="addArtist" class="form-group row">
+      <label class="col-sm-1 col-form-label">Name:</label>
+      <input
+        class="col-sm-3"
+        name="artist_name"
+        [(ngModel)]="musics.artist[0].artist_name"
+        ngModel
+      />
+      <label class="col-sm-1 col-form-label">Artist Bio:</label>
+      <input
+        class="col-sm-2"
+        name="bio"
+        [(ngModel)]="musics.artist[0].bio"
+        ngModel
+      />
+
+      <label class="col-sm-1 col-form-label">Age:</label>
+      <input
+        class="col-sm-2"
+        name="age"
+        [(ngModel)]="musics.artist[0].age"
+        ngModel
+      />
+      <button class="col-sm-2" type="submit">Add Artist</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="addArtist">
+  <ul *ngFor="let artist of artistList" class="list-group">
+    <li *ngIf="artistList.length > 0" class="list-group-item">
+      Artist Name: {{ artist.artist_name }} Artist Age: {{ artist.age }} Artist
+      Bio: {{ artist.bio }}
+    </li>
+  </ul>
+</div>

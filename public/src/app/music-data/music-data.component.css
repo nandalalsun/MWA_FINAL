@@ -1,0 +1,15 @@
+ul{
+    font-size: 20px;
+    color: black;
+    list-style-type: none;
+} 
+ span{
+    font-size: xx-large;
+    font-weight: 900;
+    
+}
+hr{
+    background-color: black;
+    height: 2px;
+    text-align: left;
+}

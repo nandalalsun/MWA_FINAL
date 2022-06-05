@@ -1,0 +1,27 @@
+<div class="search">
+  <!-- <select class="form-select" (change)="selectChangeHandler($event)">
+    <option value="id">Id</option>
+    <option value="description">Description</option>
+    <option value="music_name">Music Name</option>
+  </select> -->
+
+  <input type="search" #searchQuery id="form1" />
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="search(searchQuery.value)"
+  >
+    Search
+  </button>
+</div>
+
+<h1>Search Reasult</h1>
+
+<ul *ngFor="let music of result">
+  <li>
+    {{ music.music_name }}
+  </li>
+  
+</ul>
+
+<h1 *ngIf="noMusicFound">No Result Found</h1>

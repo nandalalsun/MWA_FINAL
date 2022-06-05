@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <span>Music</span>
+  <hr />
+  <li *ngFor="let music of musics" class="list-group-item">
+    <a routerLink="{{ music._id }}">{{ music.music_name }} </a>
+  </li>
+</ul>
